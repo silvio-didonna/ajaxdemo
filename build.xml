@@ -92,6 +92,14 @@
             <classpath refid="ajaxdemo.classpath"/>
         </junit>
     </target>
+              	<target name="test">
+              	        <mkdir dir="${junit.output.dir}"/>
+              	        <junit fork="yes" printsummary="withOutAndErr">
+              	            <formatter type="xml"/>
+              	            <test name="com.howtodoinjava.demo.ajax.GetTimeServletTest" todir="${junit.output.dir}"/>
+              	            <classpath refid="ajaxdemo.classpath"/>
+              	        </junit>
+              	    </target>
     <target name="New_configuration (2)">
         <java classname="" failonerror="true" fork="yes">
             <classpath refid="ajaxdemo.classpath"/>
