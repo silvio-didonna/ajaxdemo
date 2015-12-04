@@ -63,7 +63,7 @@
 <body>
 	<br/>
 	<input type="button" value="Show Server Time" onclick='ajaxSyncRequest("get-current-time")'/>
-		<input type="checkbox" value="boh" />
+		<input type="checkbox" value="test" />
 	
 	<br/><br/>
 	Message from server :: <span id="message"></span>
