@@ -39,8 +39,8 @@
         <pathelement location="../../../../Program Files/Apache Software Foundation/Apache Tomcat 8.0.27/lib/websocket-api.jar"/>
     </path>
     <path id="JUnit 4.libraryclasspath">
-        <pathelement location="../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
-        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <path id="ajaxdemo.classpath">
         <pathelement location="build/classes"/>
@@ -48,11 +48,13 @@
         <path refid="EAR Libraries.libraryclasspath"/>
         <path refid="Apache Tomcat v8.0 [Apache Tomcat v8.0].libraryclasspath"/>
         <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/junit.jar"/>
     </path>
     <target name="init">
         <mkdir dir="build/classes"/>
         <copy includeemptydirs="false" todir="build/classes">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -92,14 +94,6 @@
             <classpath refid="ajaxdemo.classpath"/>
         </junit>
     </target>
-              	<target name="test">
-              	        <mkdir dir="${junit.output.dir}"/>
-              	        <junit fork="yes" printsummary="withOutAndErr">
-              	            <formatter type="xml"/>
-              	            <test name="com.howtodoinjava.demo.ajax.GetTimeServletTest" todir="${junit.output.dir}"/>
-              	            <classpath refid="ajaxdemo.classpath"/>
-              	        </junit>
-              	    </target>
     <target name="New_configuration (2)">
         <java classname="" failonerror="true" fork="yes">
             <classpath refid="ajaxdemo.classpath"/>
