@@ -9,7 +9,7 @@ public class GetTimeServletTest {
 	@Test
 	public void test() {
 		//fail("Not yet implemented");
-		assertEquals(0, 0);
+		assertEquals(0, 1);
 	}
 
 }
